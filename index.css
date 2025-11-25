@@ -1,0 +1,66 @@
+h1{
+    color: rgb(64, 15, 15);
+    margin-left: 25%;
+    margin-top:-100px;
+}
+body {
+    background-color: rgb(252, 254, 245);
+
+}
+
+p{
+    color: rgb(120, 63, 63);
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+h2{
+    color: rgb(64, 15, 15);
+    margin-top: -10px;
+    margin-left: 25%;
+}
+
+h3{
+    color: rgb(64, 15, 15);
+    margin-top: -10px;
+    margin-left: 25%;
+}
+
+
+
+h4{
+    margin-top: 50px;
+    margin-left: 25%;
+}
+
+h5{
+    margin-top: 50px;
+    margin-left: 25%;
+}
+
+hr{
+    margin-top: 50px;
+    margin-left: 24%;
+}
+
+a{
+    margin-top: 50px;
+    margin-left: 45%;
+    
+}
+a:link{
+    color: rgb(63, 183, 63);
+    background-color: transparent;
+}
+a:visited{
+    color: crimson;
+    background-color: transparent;
+}
+a:hover{
+    color: blue;
+    background-color: transparent;
+}
+a:active{
+    color: blueviolet;
+    background-color: transparent;
+}
