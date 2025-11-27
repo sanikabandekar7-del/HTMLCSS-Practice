@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function togglebulb(){
+            if(document.getElementById("bulb").src.includes("OFF")){
+                document.getElementById('bulb').src= './ON.png' ;
+                document.getElementById("togglebutton").innertext="click to turn off";
+                document.getElementById("togglebutton").style.backgroundColor="red";
+            }
+
+            else{
+                document.getElementById('bulb').src='./OFF.png';
+                document.getElementById("togglebutton").innertext="click to turn on";
+                document.getElementById("togglebutton").style.backgroundColor="green";
+            }
+
+            
+
+        }
+    </script>
+</head>
+<body style="background-color: rgba(16, 14, 14, 0.32);">
+    <!-- <img id="bulb" src="./OFF.png" > -->
+    <img id="bulb" src="./OFF.png" alt="image of a bulb">
+    <!-- <button id="togglebutton" style="background-color: rgb(169, 19, 19); padding: 10px;" onclick="togglebulb()">click to turn on</button> -->
+    <button id="togglebutton" style="background-color: rgb(169, 19, 19); padding: 10px;" onclick="togglebulb()">Click to turrn on</button>
+</body>
+</html>
