@@ -1,293 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Music Landing Page</title>
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
-    }
-
-    :root {
-      --text-light: #ffffff;
-      --text-accent: #ffcc7f;
-      --nav-bg: rgba(0, 0, 0, 0.6);
-      --card-bg: rgba(0, 0, 0, 0.45);
-      --card-hover: rgba(255, 255, 255, 0.25);
-      --border-light: #ffffff60;
-    }
-
-    body {
-      background: url('/mnt/data/logoM.png') no-repeat center center/cover;
-      background-attachment: fixed;
-      color: var(--text-light);
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
-    }
-
-    /* NAVBAR */
-    .navbar {
-      width: 100%;
-      padding: 18px 45px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: var(--nav-bg);
-      backdrop-filter: blur(8px);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .logo img {
-      width: 45px;
-      height: 45px;
-    }
-
-    .logo span {
-      font-size: 30px;
-      font-weight: 700;
-      color: var(--text-accent);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 35px;
-      font-size: 20px;
-    }
-
-    label {
-      cursor: pointer;
-      color: var(--text-light);
-      transition: 0.3s;
-    }
-
-    label:hover {
-      color: var(--text-accent);
-    }
-
-    .profile {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .profile img {
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      border: 2px solid #fff;
-    }
-
-    .profile span {
-      color: var(--text-accent);
-      font-weight: 600;
-    }
-
-    input[type="radio"] {
-      display: none;
-    }
-
-    .section {
-      padding: 120px 40px 50px;
-      display: none;
-    }
-
-    #homeTab:checked ~ #home,
-    #storeTab:checked ~ #store,
-    #coursesTab:checked ~ #courses,
-    #registerTab:checked ~ #register {
-      display: block;
-    }
-
-    h2 {
-      font-size: 36px;
-      margin-bottom: 25px;
-      color: var(--text-accent);
-    }
-
-    .scroll-row {
-      display: flex;
-      overflow-x: auto;
-      gap: 25px;
-      padding: 15px 0;
-    }
-
-    .item-card {
-      min-width: 230px;
-      height: 150px;
-      border-radius: 16px;
-      background: var(--card-bg);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 20px;
-      border: 1px solid var(--border-light);
-      color: var(--text-light);
-      transition: 0.3s;
-    }
-
-    .item-card:hover {
-      background: var(--card-hover);
-      transform: scale(1.07);
-      border: 1px solid var(--text-light);
-      color: var(--text-accent);
-    }
-
-    /* SUB LIST */
-    .sub-list {
-      margin-top: 20px;
-      max-height: 0;
-      overflow: hidden;
-      transition: 0.4s;
-    }
-
-    input[type="checkbox"]:checked + .sub-list {
-      max-height: 260px;
-      overflow-y: auto;
-    }
-
-    .sub-list div {
-      padding: 12px;
-      margin: 8px 0;
-      background: var(--card-bg);
-      border-radius: 10px;
-      border: 1px solid var(--border-light);
-      transition: 0.3s;
-    }
-
-    .sub-list div:hover {
-      background: var(--card-hover);
-      color: var(--text-accent);
-    }
-
-    /* REGISTRATION */
-    #register {
-      display: flex;
-      justify-content: center;
-    }
-
-    .form-box {
-      width: 370px;
-      background: rgba(0, 0, 0, 0.6);
-      padding: 30px;
-      border-radius: 15px;
-      border: 1px solid var(--border-light);
-      backdrop-filter: blur(6px);
-      text-align: center;
-    }
-
-    .form-box input {
-      width: 100%;
-      padding: 14px;
-      font-size: 16px;
-      border: none;
-      outline: none;
-      border-radius: 10px;
-      margin-top: 12px;
-    }
-
-    .form-box button {
-      width: 100%;
-      padding: 14px;
-      background: var(--text-accent);
-      border: none;
-      border-radius: 12px;
-      font-size: 18px;
-      font-weight: 600;
-      margin-top: 20px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .form-box button:hover {
-      transform: scale(1.05);
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 850px) {
-      .navbar {
-        flex-direction: column;
-        gap: 15px;
-        padding: 20px 20px;
-      }
-
-      .nav-links {
-        gap: 22px;
-        font-size: 18px;
-      }
-
-      .scroll-row {
-        gap: 18px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusicHub - Your Music Destination</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="./MUSIC.JS"></script>
 </head>
-
 <body>
+    <nav class="navbar">
+        <!-- Left Division: Logo + Music Text -->
+        <div class="nav-left">
+            <div class="logo">🎵</div>
+            <span class="music-text">MusicHub</span>
+        </div>
 
-  <!-- RADIO CONTROLS -->
-  <input type="radio" name="tabs" id="homeTab" checked>
-  <input type="radio" name="tabs" id="storeTab">
-  <input type="radio" name="tabs" id="coursesTab">
-  <input type="radio" name="tabs" id="registerTab">
+        <!-- Center Division: Navigation Links -->
+        <div class="nav-center">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#store" class="nav-link">Store</a>
+            <a href="#songs" class="nav-link">Songs</a>
+            <a href="#course" class="nav-link">Course</a>
+            <a href="#support" class="nav-link">Support</a>
+        </div>
 
-  <div class="navbar">
-    <div class="logo">
-      <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png">
-      <span>Music</span>
-    </div>
+        <!-- Right Division: Profile -->
+        <div class="nav-right">
+            <span class="profile-name">John Doe</span>
+            <img src="https://via.placeholder.com/40x40/4A90E2/FFFFFF?text=JD" alt="Profile" class="profile-pic">
+        </div>
+    </nav>
 
-    <div class="nav-links">
-      <label for="homeTab">Home</label>
-      <label for="storeTab">Store</label>
-      <label for="coursesTab">Courses</label>
-      <label for="registerTab">Registration</label>
-      <label>Support</label>
-    </div>
+    <!-- Home Section -->
+    <section id="home" class="section active">
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Discover Your Sound</h1>
+                <p>Unlimited music, exclusive releases, and personalized playlists await you.</p>
+                <button class="cta-button" onclick="scrollToSection('support')">Register Now</button>
+            </div>
+        </div>
+        
+        <!-- Overview Buy Section -->
+        <div class="overview-container">
+            <h2 class="section-title">Buy Premium Instruments</h2>
+            <div class="horizontal-scroll">
+                <div class="instrument-card">
+                    <img src="https://images.unsplash.com/photo-1583983110559-51421ba283ab?w=300&h=300&fit=crop" alt="Guitar">
+                    <h3>Acoustic Guitar</h3>
+                    <div class="price">$299</div>
+                </div>
+                <div class="instrument-card">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=300&h=300&fit=crop" alt="Piano">
+                    <h3>Digital Piano</h3>
+                    <div class="price">$899</div>
+                </div>
+                <div class="instrument-card">
+                    <img src="https://images.unsplash.com/photo-1578269174936-d6761fbde1a2?w=300&h=300&fit=crop" alt="Violin">
+                    <h3>Violin Set</h3>
+                    <div class="price">$450</div>
+                </div>
+                <div class="instrument-card">
+                    <img src="https://images.unsplash.com/photo-1601582212443-34417e6863bd?w=300&h=300&fit=crop" alt="Drums">
+                    <h3>Drum Kit</h3>
+                    <div class="price">$1,299</div>
+                </div>
+                <div class="instrument-card">
+                    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=300&h=300&fit=crop" alt="Saxophone">
+                    <h3>Saxophone</h3>
+                    <div class="price">$650</div>
+                </div>
+            </div>
+        </div>
 
-    <div class="profile">
-      <img src="https://cdn-icons-png.flaticon.com/512/9131/9131529.png" />
-      <span>S Profile</span>
-    </div>
-  </div>
+        <!-- Overview Classes Section -->
+        <div class="overview-container">
+            <h2 class="section-title">Explore Music Classes</h2>
+            <div class="horizontal-scroll">
+                <div class="class-category">
+                    <div class="category-header">
+                        <img src="https://images.unsplash.com/photo-1611902536814-f50cb7a7aa47?w=200&h=200&fit=crop" alt="Vocals">
+                        <h3>Vocal</h3>
+                    </div>
+                </div>
+                <div class="class-category">
+                    <div class="category-header">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=200&fit=crop" alt="Instruments">
+                        <h3>Instruments</h3>
+                    </div>
+                </div>
+                <div class="class-category">
+                    <div class="category-header">
+                        <img src="https://images.unsplash.com/photo-1608662376656-41e0f14391fe?w=200&h=200&fit=crop" alt="Theory">
+                        <h3>Music Theory</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- HOME -->
-  <div id="home" class="section">
-    <h2>Playlists</h2>
+    <!-- Store Section -->
+    <section id="store" class="section">
+        <div class="section-container">
+            <h2 class="section-title">Music Store</h2>
+            <p class="section-subtitle">Premium instruments for every musician</p>
+            <div class="horizontal-scroll">
+                <div class="instrument-card">
+                    <img src="https://images.unsplash.com/photo-1583983110559-51421ba283ab?w=300&h=300&fit=crop" alt="Guitar">
+                    <h3>Acoustic Guitar</h3>
+                    <div class="price">$299</div>
+                    <button class="buy-btn">Buy Now</button>
+                </div>
+                <div class="instrument-card">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=300&h=300&fit=crop" alt="Piano">
+                    <h3>Digital Piano</h3>
+                    <div class="price">$899</div>
+                    <button class="buy-btn">Buy Now</button>
+                </div>
+                <div class="instrument-card">
+                    <img src="https://images.unsplash.com/photo-1578269174936-d6761fbde1a2?w=300&h=300&fit=crop" alt="Violin">
+                    <h3>Violin Set</h3>
+                    <div class="price">$450</div>
+                    <button class="buy-btn">Buy Now</button>
+                </div>
+                <div class="instrument-card">
+                    <img src="https://images.unsplash.com/photo-1601582212443-34417e6863bd?w=300&h=300&fit=crop" alt="Drums">
+                    <h3>Drum Kit</h3>
+                    <div class="price">$1,299</div>
+                    <button class="buy-btn">Buy Now</button>
+                </div>
+                <div class="instrument-card">
+                    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=300&h=300&fit=crop" alt="Saxophone">
+                    <h3>Saxophone</h3>
+                    <div class="price">$650</div>
+                    <button class="buy-btn">Buy Now</button>
+                </div>
+                <div class="instrument-card">
+                    <img src="https://images.unsplash.com/photo-1511671782779-cb56e97ed6eb?w=300&h=300&fit=crop" alt="Flute">
+                    <h3>Professional Flute</h3>
+                    <div class="price">$380</div>
+                    <button class="buy-btn">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div class="scroll-row">
-      <label for="homeSubToggle" class="item-card">Rock</label>
-      <label for="homeSubToggle" class="item-card">Pop</label>
-      <label for="homeSubToggle" class="item-card">Jazz</label>
-      <label for="homeSubToggle" class="item-card">Hip Hop</label>
-      <label for="homeSubToggle" class="item-card">Classical</label>
-    </div>
+    <!-- Songs Section -->
+    <section id="songs" class="section">
+        <div class="section-container">
+            <h2 class="section-title">Songs & Playlists</h2>
+            <p class="section-subtitle">Discover your favorite genres</p>
+            <div class="horizontal-scroll">
+                <div class="music-genre">
+                    <img src="https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=250&h=250&fit=crop" alt="Pop">
+                    <h3>Pop</h3>
+                    <div class="vertical-playlist">
+                        <div class="playlist-item">Top 50 Pop Hits</div>
+                        <div class="playlist-item">Pop Love Songs</div>
+                        <div class="playlist-item">New Releases</div>
+                    </div>
+                </div>
+                <div class="music-genre">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=250&h=250&fit=crop" alt="Rock">
+                    <h3>Rock</h3>
+                    <div class="vertical-playlist">
+                        <div class="playlist-item">Classic Rock</div>
+                        <div class="playlist-item">Alternative Rock</div>
+                        <div class="playlist-item">Rock Anthems</div>
+                    </div>
+                </div>
+                <div class="music-genre">
+                    <img src="https://images.unsplash.com/photo-1579568715838-d3163ffa297e?w=250&h=250&fit=crop" alt="Jazz">
+                    <h3>Jazz</h3>
+                    <div class="vertical-playlist">
+                        <div class="playlist-item">Smooth Jazz</div>
+                        <div class="playlist-item">Jazz Standards</div>
+                        <div class="playlist-item">Modern Jazz</div>
+                    </div>
+                </div>
+                <div class="music-genre">
+                    <img src="https://images.unsplash.com/photo-1462398162069-3e4a97b2b5c9?w=250&h=250&fit=crop" alt="Classical">
+                    <h3>Classical</h3>
+                    <div class="vertical-playlist">
+                        <div class="playlist-item">Piano Masterpieces</div>
+                        <div class="playlist-item">Orchestral Works</div>
+                        <div class="playlist-item">Chamber Music</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <input type="checkbox" id="homeSubToggle">
-    <div class="sub-list">
-      <div>Playlist 1</div>
-      <div>Playlist 2</div>
-      <div>Playlist 3</div>
-      <div>Playlist 4</div>
-      <div>Playlist 5</div>
-      <div>Playlist 6</div>
-    </div>
-  </div>
+    <!-- Courses Section -->
+    <section id="course" class="section">
+        <div class="section-container">
+            <h2 class="section-title">Music Courses</h2>
+            <p class="section-subtitle">Learn from world-class instructors</p>
+            <div class="horizontal-scroll">
+                <div class="course-category">
+                    <div class="category-header vocal">
+                        <img src="https://images.unsplash.com/photo-1611902536814-f50cb7a7aa47?w=250&h=250&fit=crop" alt="Vocals">
+                        <h3>Vocal Training</h3>
+                    </div>
+                    <div class="subcategory-list">
+                        <div class="subcategory">Classical Singing</div>
+                        <div class="subcategory">Pop Vocals</div>
+                        <div class="subcategory">Opera</div>
+                        <div class="subcategory">Vocal Technique</div>
+                    </div>
+                </div>
+                <div class="course-category">
+                    <div class="category-header instruments">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=250&h=250&fit=crop" alt="Instruments">
+                        <h3>Instruments</h3>
+                    </div>
+                    <div class="subcategory-list">
+                        <div class="subcategory">Piano</div>
+                        <div class="subcategory">Guitar</div>
+                        <div class="subcategory">Violin</div>
+                        <div class="subcategory">Drums</div>
+                        <div class="subcategory">Saxophone</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- STORE -->
-  <div id="store" class="section">
-    <h2>Instruments</h2>
+    <!-- Support/Registration Section -->
+    <section id="support" class="section">
+        <div class="section-container">
+            <h2 class="section-title">Create Your Account</h2>
+            <p class="section-subtitle">Join MusicHub today and start your musical journey</p>
+            <form id="registerForm" class="register-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" required>
+                </div>
+                <button type="submit" class="cta-button full-width">Register Now</button>
+            </form>
+        </div>
+    </section>
 
-    <div class="scroll-row">
-      <label for="storeSubToggle" class="item-card">Guitar
+    <script src="script.js"></script>
+</body>
+</html>
