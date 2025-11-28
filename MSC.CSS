@@ -1,0 +1,67 @@
+*{box-sizing:border-box;margin:0;padding:0}
+--muted:#bfc7d6;
+--bg:linear-gradient(180deg,#0f1724 0%, #071126 100%);
+--card: rgba(255,255,255,0.04);
+--glass: rgba(255,255,255,0.03);
+--text:#e6eef8;
+--glass-border: rgba(255,255,255,0.06);
+}
+body{
+font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+color:var(--text);
+background: var(--bg), url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1600&auto=format&fit=crop');
+background-size:cover;background-attachment:fixed;min-height:100vh;display:flex;flex-direction:column;
+}
+.site-header{
+display:flex;align-items:center;justify-content:space-between;padding:14px 24px;background:linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.15));backdrop-filter: blur(6px);
+}
+.nav-left{display:flex;align-items:center;gap:12px}
+.logo{width:40px;height:40px;border-radius:8px;object-fit:cover}
+.brand{font-weight:700;font-size:1.1rem}
+.nav-center{display:flex;gap:18px}
+.nav-link{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:8px;font-weight:600}
+.nav-link:hover{color:var(--text);background:var(--glass)}
+.nav-right{display:flex;align-items:center;gap:10px}
+.username{color:var(--muted)}
+.avatar{width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid var(--glass-border)}
+.menu-toggle{display:none;background:transparent;border:0;color:var(--text);font-size:22px}
+
+main{width:100%;max-width:1200px;margin:28px auto;padding:0 16px;flex:1}
+.section{margin-bottom:36px;padding:18px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center}
+.hero-content h1{font-size:2.2rem;margin-bottom:8px}
+.btn{display:inline-block;padding:10px 14px;border-radius:10px;background:var(--accent);color:white;text-decoration:none;font-weight:700;margin-top:10px}
+.overview h2{margin:16px 0}
+.carousel{display:flex;gap:12px;overflow-x:auto;padding:10px 4px}
+.carousel::-webkit-scrollbar{height:10px}
+.carousel::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.12);border-radius:10px}
+.card{min-width:200px;background:var(--card);padding:12px;border-radius:10px;border:1px solid var(--glass-border);backdrop-filter: blur(4px)}
+.card img{width:100%;height:120px;object-fit:cover;border-radius:8px}
+.card h4{margin:8px 0 4px}
+.price{font-weight:700;color:var(--accent)}
+
+.vertical-list{margin-top:12px;max-height:380px;overflow-y:auto;padding:8px;border-radius:8px}
+.vertical-list .item{display:flex;gap:12px;padding:8px;border-radius:8px;background:rgba(0,0,0,0.12);margin-bottom:8px}
+.store-grid{display:flex;flex-direction:column;gap:12px;max-height:520px;overflow-y:auto;padding:6px}
+.form-card{background:var(--glass);padding:12px;border-radius:10px;border:1px solid var(--glass-border);width:320px}
+.forms{display:flex;gap:20px;flex-wrap:wrap}
+.form-card label{display:flex;flex-direction:column;font-size:0.9rem;color:var(--muted);margin-bottom:8px}
+.form-card input{padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--text)}
+.support-message{margin-top:12px;color:var(--muted)}
+.site-footer{text-align:center;padding:12px;color:var(--muted);font-size:0.9rem}
+
+/* Hover cards for course details */
+.detail-popup{position:relative}
+.detail-popup .details{position:absolute;left:0;top:100%;transform:translateY(8px);min-width:220px;background:rgba(0,0,0,0.65);padding:10px;border-radius:8px;border:1px solid var(--glass-border);display:none}
+.detail-popup:hover .details{display:block}
+
+/* Responsive */
+@media (max-width:900px){
+.hero{grid-template-columns:1fr}
+.nav-center{display:none}
+.menu-toggle{display:block}
+}
+@media (max-width:600px){
+.forms{flex-direction:column}
+.form-card{width:100%}
+}
