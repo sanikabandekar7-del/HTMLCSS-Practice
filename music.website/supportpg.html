@@ -25,14 +25,14 @@
     </nav>
 
     <div class="nav-right">
-      <div class="username">Guest</div>
-      <img class="avatar" src="https://images.unsplash.com/photo-1545996124-6f94b8d0e0b5?q=80&w=200&auto=format&fit=crop" alt="profile">
+      <a href="loginpg.html" class="login-btn-nav">Login</a>
     </div>
+
   </header>
 
   <main class="container">
     <h1 class="page-heading">Support</h1>
-    <p class="lead">Login or register to access courses and buy instruments.</p>
+    <p class="lead">register to access courses and buy instruments.</p>
 
     <section class="support-grid">
       <div class="support-box">
@@ -48,15 +48,7 @@
         </form>
       </div>
 
-      <div class="support-box">
-        <h2>Login</h2>
-        <form id="login-form" onsubmit="return handleLogin(event)">
-          <input id="lemail" type="email" placeholder="Email" required>
-          <input id="lpass"  type="password" placeholder="Password" required>
-          <button class="btn" type="submit">Login</button>
-          <p id="login-msg" class="form-msg"></p>
-        </form>
-      </div>
+     
     </section>
   </main>
 

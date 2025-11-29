@@ -4,7 +4,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
 // highlight active nav link based on filename
 (function highlightNav(){
   const links = document.querySelectorAll('.nav-link');
-  const file = window.location.pathname.split('/').pop() || 'index.html';
+  const file = window.location.pathname.split('/').pop() || 'homepg.html';
   links.forEach(a=>{
     if(a.getAttribute('href') === file) a.classList.add('active');
     else a.classList.remove('active');
@@ -72,11 +72,29 @@ if(document.getElementById('song-types')){
     if(!card) return;
     showPlaylists(card.dataset.type);
   });
-  document.getElementById('song-types').addEventListener('mouseover', (ev)=>{
+  document.getElementById('song-types').addEventListener('click', (ev)=>{
     const card = ev.target.closest('.card');
     if(card) showPlaylists(card.dataset.type);
   });
 }
+// // login
+// function loginUser() {
+//     const email = document.getElementById("login-email").value.trim();
+//     const pw = document.getElementById("login-password").value.trim();
+
+//     if(email === "" || pw === ""){
+//         alert("Please fill all fields.");
+//         return false;
+//     }
+
+//     alert("Login Successful (Demo)");
+//     return true;
+// }
+
+// document.getElementById("login-form")?.addEventListener("submit", function(e){
+//     e.preventDefault();
+//     loginUser();
+// });
 
 /* playlists display */
 function showPlaylists(type){
@@ -133,7 +151,7 @@ function handleRegister(e){
   if(pass !== cpass){ msg.textContent='Passwords do not match.'; msg.style.color='#ffb3b3'; return false;}
 
   // demo success (no backend)
-  msg.textContent = 'Registration successful (demo).';
+  msg.textContent = 'Registration successful ';
   msg.style.color = '#b7ffb3';
   return false;
 }
@@ -146,9 +164,19 @@ function handleLogin(e){
 
   if(email.length===0 || pass.length===0){ msg.textContent='Enter email and password.'; msg.style.color='#ffb3b3'; return false;}
   // demo login
-  msg.textContent = 'Login demo successful (no backend).';
+  msg.textContent = 'Login successful.';
   msg.style.color = '#b7ffb3';
   return false;
+
+  const navright = document.querySelector('.nav-right');
+  if(navright){
+    navright.addEventListener('keydown', (ev)=>{
+      const focusable = Array.from(navright.querySelectorAll('a'));
+      const idx = focusable.indexOf(document.activeElement);
+      if(ev.key === 'ArrowRight') focusable[(idx+1)%focusable.length].focus();
+      if(ev.key === 'ArrowLeft') focusable[(idx-1+focusable.length)%focusable.length].focus();
+    });
+  }
 }
 
 /* small accessibility: keyboard nav center (if visible) */
@@ -161,3 +189,13 @@ if(navCenter){
     if(ev.key === 'ArrowLeft') focusable[(idx-1+focusable.length)%focusable.length].focus();
   });
 }
+
+// const navright = document.querySelector('.nav-right');
+// if(navright){
+//   navright.addEventListener('keydown', (ev)=>{
+//     const focusable = Array.from(navright.querySelectorAll('a'));
+//     const idx = focusable.indexOf(document.activeElement);
+//     if(ev.key === 'ArrowRight') focusable[(idx+1)%focusable.length].focus();
+//     if(ev.key === 'ArrowLeft') focusable[(idx-1+focusable.length)%focusable.length].focus();
+//   });
+// }
