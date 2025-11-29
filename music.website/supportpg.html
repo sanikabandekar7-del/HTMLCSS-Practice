@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Music Hub — Support</title>
+  <link rel="stylesheet" href="MSC.CSS">
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-left">
+      <img class="logo" src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=200&auto=format&fit=crop" alt="Music Hub logo">
+      <div class="brand">
+        <div class="title">Music Hub</div>
+        <div class="subtitle">feel the sound</div>
+      </div>
+    </div>
+
+    <nav class="nav-center">
+      <a href="homepg.html" class="nav-link">Home</a>
+      <a href="songpg.html" class="nav-link">Songs</a>
+      <a href="storepg.html" class="nav-link">Store</a>
+      <a href="coursespg.html" class="nav-link">Courses</a>
+      <a href="supportpg.html" class="nav-link">Support</a>
+    </nav>
+
+    <div class="nav-right">
+      <div class="username">Guest</div>
+      <img class="avatar" src="https://images.unsplash.com/photo-1545996124-6f94b8d0e0b5?q=80&w=200&auto=format&fit=crop" alt="profile">
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 class="page-heading">Support</h1>
+    <p class="lead">Login or register to access courses and buy instruments.</p>
+
+    <section class="support-grid">
+      <div class="support-box">
+        <h2>Register</h2>
+        <form id="register-form" onsubmit="return handleRegister(event)">
+          <input id="rname" type="text" placeholder="Full name" required>
+          <input id="remail" type="email" placeholder="Email" required>
+          <input id="rmobile" type="tel" placeholder="Mobile (10 digits)" pattern="\d{10}" required>
+          <input id="rpass" type="password" placeholder="Password (6+ chars)" minlength="6" required>
+          <input id="rcpass" type="password" placeholder="Confirm password" minlength="6" required>
+          <button class="btn" type="submit">Register</button>
+          <p id="reg-msg" class="form-msg"></p>
+        </form>
+      </div>
+
+      <div class="support-box">
+        <h2>Login</h2>
+        <form id="login-form" onsubmit="return handleLogin(event)">
+          <input id="lemail" type="email" placeholder="Email" required>
+          <input id="lpass"  type="password" placeholder="Password" required>
+          <button class="btn" type="submit">Login</button>
+          <p id="login-msg" class="form-msg"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> Music Hub</p>
+  </footer>
+
+  <script src="MSC.JS"></script>
+</body>
+</html>
+

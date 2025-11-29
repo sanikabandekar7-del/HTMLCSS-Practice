@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Hub</title>
+    <link rel="stylesheet" href="./MSC.CSS"/>
+</head>
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar">
+        <!-- Left -->
+        <div class="nav-left">
+            <img src="logo.png" alt="logo" class="logo">
+            <h2>Music Hub</h2>
+        </div>
+
+        <!-- Center -->
+        <div class="nav-center">
+            <a href="./homepg.html" class="active">Home</a>
+            <a href="./songpg.html">Songs</a>
+            <a href="./storepg.html">Store</a>
+            <a href="./coursespg.html">Courses</a>
+            <a href="./supportpg.html">Support</a>
+        </div>
+
+        <!-- Right -->
+        <div class="nav-right">
+            <span class="username">Username</span>
+            <img src="profile.jpg" alt="profile" class="profile-pic">
+        </div>
+    </nav>
+
+    <!-- HOME SECTION -->
+    <section id="home" class="home">
+        <h1>Welcome to Music Hub</h1>
+        <p>Your one-stop destination for music, instruments & learning.</p>
+
+        <!-- BUY SECTION -->
+        <h2 class="section-title">Buy Instruments</h2>
+        <div class="scroll-container" id="instrument-list">
+            <!-- JS will insert items -->
+        </div>
+
+        <!-- CLASSES SECTION -->
+        <h2 class="section-title">Music Classes</h2>
+        <div class="scroll-container" id="classes-list">
+            <!-- JS will insert items -->
+        </div>
+    </section>
+
+    <script src="./MSC.JS"></script>
+</body>
+</html>
