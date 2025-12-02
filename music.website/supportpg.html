@@ -9,7 +9,7 @@
 <body>
   <header class="nav">
     <div class="nav-left">
-      <img class="logo" src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=200&auto=format&fit=crop" alt="Music Hub logo">
+      <img class="logo" src="./img/images-4.png" alt="Music Hub logo">
       <div class="brand">
         <div class="title">Music Hub</div>
         <div class="subtitle">feel the sound</div>
@@ -27,33 +27,33 @@
     <div class="nav-right">
       <a href="loginpg.html" class="login-btn-nav">Login</a>
     </div>
-
   </header>
 
-  <main class="container">
-    <h1 class="page-heading">Support</h1>
-    <p class="lead">register to access courses and buy instruments.</p>
+  <main class="container center-page">
+    <h1>Support</h1>
+    <p>Register to access courses, playlists and buy instruments.</p>
 
-    <section class="support-grid">
-      <div class="support-box">
-        <h2>Register</h2>
-        <form id="register-form" onsubmit="return handleRegister(event)">
-          <input id="rname" type="text" placeholder="Full name" required>
-          <input id="remail" type="email" placeholder="Email" required>
-          <input id="rmobile" type="tel" placeholder="Mobile (10 digits)" pattern="\d{10}" required>
-          <input id="rpass" type="password" placeholder="Password (6+ chars)" minlength="6" required>
-          <input id="rcpass" type="password" placeholder="Confirm password" minlength="6" required>
-          <button class="btn" type="submit">Register</button>
-          <p id="reg-msg" class="form-msg"></p>
-        </form>
-      </div>
+    <h2>Register</h2>
 
-     
-    </section>
+    <form id="registerForm" onsubmit="return false;">
+      <input name="name" type="text" placeholder="Full Name" required>
+
+      <input name="email" type="email" placeholder="Email" required>
+
+      <input name="phone" type="text" placeholder="Mobile (10 digits)" maxlength="10" required>
+
+      <input name="password" type="password" placeholder="Password" required>
+
+      <input name="confirm" type="password" placeholder="Confirm Password" required>
+
+      <button type="button" onclick="validateAndSubmit('registerForm')">Register</button>
+    </form>
+
   </main>
 
+
   <footer class="footer">
-    <p>&copy; <span id="year"></span> Music Hub</p>
+    <div class="site-inner"><p>&copy; <span id="year"></span> Music Hub</p></div>
   </footer>
 
   <script src="MSC.JS"></script>

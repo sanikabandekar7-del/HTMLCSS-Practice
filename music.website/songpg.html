@@ -9,7 +9,7 @@
 <body>
   <header class="nav">
     <div class="nav-left">
-      <img class="logo" src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=200&auto=format&fit=crop" alt="Music Hub logo">
+      <img class="logo" src="./img/images-4.png" alt="Music Hub logo">
       <div class="brand">
         <div class="title">Music Hub</div>
         <div class="subtitle">feel the sound</div>
@@ -30,20 +30,21 @@
 
   </header>
 
-  <main class="container">
+  <main class="container centered-songs">
     <h1 class="page-heading">Songs</h1>
     <p class="lead">Click a genre to view the playlists.</p>
 
-    <section>
-      <h2 class="section-title">Genres</h2>
-      <div id="song-types" class="hscroll"></div>
+    <section class="song-section">
+      <h2 class="section-title">Genre</h2>
+      <div id="home-songs-carousel" class="hscroll"></div>
     </section>
 
-    <section>
-      <h2 class="section-title">Playlists</h2>
-      <div id="playlists-area" class="vlist"></div>
+    <section class="song-section">
+      <h2 class="section-title" style="margin-top:18px;">Playlists</h2>
+      <div id="home-playlists" class="vertical-scroll"></div>
     </section>
   </main>
+
 
   <footer class="footer">
     <p>&copy; <span id="year"></span> Music Hub</p>

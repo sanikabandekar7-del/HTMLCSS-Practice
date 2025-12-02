@@ -7,10 +7,9 @@
   <link rel="stylesheet" href="MSC.CSS">
 </head>
 <body>
-  <!-- NAV -->
   <header class="nav">
     <div class="nav-left">
-      <img class="logo" src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=200&auto=format&fit=crop" alt="Music Hub logo">
+      <img class="logo" src="./img/images-4.png" alt="Music Hub logo">
       <div class="brand">
         <div class="title">Music Hub</div>
         <div class="subtitle">feel the sound</div>
@@ -28,33 +27,45 @@
     <div class="nav-right">
       <a href="loginpg.html" class="login-btn-nav">Login</a>
     </div>
-
   </header>
 
-  <!-- MAIN -->
   <main class="container">
-    <section class="hero">
-      <h1>Welcome to Music Hub</h1>
-      <p>Your one-stop place to buy instruments, join classes and discover playlists.</p>
-      <a class="btn" href="supportpg.html">Register / Get Started</a>
-    </section>
+    <div class="site-inner">
+      <section class="hero">
+        <h1>Welcome to Music Hub</h1>
+        <p>Your one-stop place to buy instruments, join classes and discover playlists.</p>
+        <a class="btn" href="supportpg.html">Register / Get Started</a>
+      </section>
 
-    <section>
-      <h2 class="section-title">Buy — Instruments</h2>
-      <div id="instruments-carousel" class="hscroll"></div>
-    </section>
+      <section>
+        <h2 class="section-title">Buy — Instruments</h2>
+        <div id="instruments-carousel" class="hscroll"></div>
+      </section>
 
-    <section>
-      <h2 class="section-title">Classes</h2>
-      <div id="classes-carousel" class="hscroll"></div>
-    </section>
+      <section>
+        <h2 class="section-title">Classes</h2>
+        <div id="classes-carousel" class="hscroll"></div>
+      </section>
+
+      <section>
+        <h2 class="section-title">Songs</h2>
+        <div id="home-songs-carousel" class="hscroll"></div>
+
+        <h2 class="section-title" style="margin-top:18px;">Playlists</h2>
+        <div id="home-playlists" class="vertical-scroll"></div>
+      </section>
+
+    </div> <!-- site-inner -->
   </main>
 
   <footer class="footer">
-    <p>&copy; <span id="year"></span> Music Hub</p>
+    <div class="site-inner">
+      <p>&copy; <span id="year"></span> Music Hub</p>
+    </div>
   </footer>
 
   <script src="MSC.JS"></script>
 </body>
 </html>
+
 

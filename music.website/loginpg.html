@@ -1,72 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Hub - login</title>
-    <link rel="stylesheet" href="MSC.CSS">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Music Hub — Login</title>
+  <link rel="stylesheet" href="MSC.CSS">
 </head>
-
 <body>
-
-<header class="nav">
+  <header class="nav">
     <div class="nav-left">
-        <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=200&auto=format" class="logo">
-        <div class="brand">
-            <div class="title">Music Hub</div>
-            <div class="subtitle">feel the sound</div>
-        </div>
+      <img class="logo" src="./img/images-4.png" alt="Music Hub logo">
+      <div class="brand">
+        <div class="title">Music Hub</div>
+        <div class="subtitle">feel the sound</div>
+      </div>
     </div>
 
     <nav class="nav-center">
-        <a href="homepg.html" class="nav-link">Home</a>
-        <a href="songpg.html" class="nav-link">Songs</a>
-        <a href="storepg.html" class="nav-link">Store</a>
-        <a href="coursespg.html" class="nav-link">Courses</a>
-        <a href="supportpg.html" class="nav-link">Support</a>
+      <a href="homepg.html" class="nav-link">Home</a>
+      <a href="songpg.html" class="nav-link">Songs</a>
+      <a href="storepg.html" class="nav-link">Store</a>
+      <a href="coursespg.html" class="nav-link">Courses</a>
+      <a href="supportpg.html" class="nav-link">Support</a>
     </nav>
 
     <div class="nav-right">
-        <a href="loginpg.html" class="login-btn-nav active">Login</a>
+      <a href="loginpg.html" class="login-btn-nav">Login</a>
     </div>
-</header>
+  </header>
 
-<main>
+  <main class="container center-page">
+    <h1>Login</h1>
 
-    <section class="support-grid">
+    <form id="loginForm" onsubmit="return false;">
+      <input name="name" type="text" placeholder="Full Name" required>
 
-      <div class="support-box">
-        <h2>Login</h2>
-        <form id="login-form" onsubmit="return handleLogin(event)">
-          <input id="lemail" type="email" placeholder="Email" required>
-          <input id="lpass"  type="password" placeholder="Password" required>
-          <button class="btn" type="submit">Login</button>
-           <p style="margin-top:8px;">New user? <a style="color:var(--accent);" href="supportpg.html">Register here</a></p>
-          <p id="login-msg" class="form-msg"></p>
+      <input name="email" type="email" placeholder="Email" required>
 
-        </form>
-      </div>
-    </section>
+      <input name="password" type="password" placeholder="Password" required>
+
+      <button type="button" onclick="validateAndSubmit('loginForm')">Login</button>
+    </form>
+
+  <p style="text-align:center; margin-top:15px;">
+    <a href="supportpg.html" style="color:#ffb100; text-decoration:none;">
+    Don’t have an account? Register here
+    </a>
+  </p>
+
   </main>
-    <!-- <div class="auth-wrap">
-        <form id="login-form">
-            <div class="field">
-                <label>Email</label>
-                <input type="email" id="login-email" required>
-            </div>
 
-            <div class="field">
-                <label>Password</label>
-                <input type="password" id="login-password" required>
-            </div>
 
-            <button class="cta" type="submit" style="margin-top:10px;">Login</button>
-            <p style="margin-top:8px;">New user? <a style="color:var(--accent);" href="supportpg.html">Register here</a></p>
-        </form>
-    </div>
-</main> -->
+  <footer class="footer">
+    <div class="site-inner"><p>&copy; <span id="year"></span> Music Hub</p></div>
+  </footer>
 
-<script src="MSC.JS"></script>
-
+  <script src="MSC.JS"></script>
 </body>
 </html>
+
