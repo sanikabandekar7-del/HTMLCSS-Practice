@@ -61,7 +61,8 @@ body{
 /* page main: keep space under fixed nav */
 .container{
   flex:1;
-  padding-top:120px; /* make room for nav */
+  padding-top:100px; /* make room for nav */
+
 }
 
 /* HERO */
@@ -130,6 +131,7 @@ body{
 .store-item{
   display:flex;
   gap:12px;
+  min-width: 700px;
   align-items:center;
   background:rgba(0,0,0,0.55);
   border-radius:10px;
@@ -167,9 +169,11 @@ body{
 }
 
 .center-page {
-  max-width: 900px;
+  max-width: 70%;
+  width: 1400px;
   margin: 40px auto;
   text-align: center;
+  padding: 40px;
 }
 
 form {
